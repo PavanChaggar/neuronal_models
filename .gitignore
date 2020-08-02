@@ -1,0 +1,11 @@
+# python env
+
+env/
+
+python_models/._*.ipynb
+python_models/.*.py
+
+julia_models/.*/
+julia_models/*.gif
+
+.vscode
