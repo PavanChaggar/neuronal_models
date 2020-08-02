@@ -70,9 +70,9 @@ function hodgkin_huxley!(du, u, p, t)
     V_m, n, m, h = u
     g_K, V_K, g_Na, V_Na, g_l, C_m = p
     
-    # Total current through the membrane    
+    # Total current through the membrane
     du[1] = input(t) - IK(g_K,n,V_m,V_K) - INa(g_Na, m, h, V_m, V_Na) - LI(g_l, V_m, V_l) / C_m
- 
+
     # Derivative of n, potassium channel activation, w.r.t. time
     du[2] = a_n(V_m) * (1 - n) - B_n(V_m) * n
 
@@ -82,7 +82,7 @@ function hodgkin_huxley!(du, u, p, t)
     # Derivative of h, leaky channel in-activion, w.r.t. time
 
     du[4] = a_h(V_m) * (1 - h) - B_h(V_m) * h
-        
+
 end
 
 #----------------------------------------------
